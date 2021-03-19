@@ -75,6 +75,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-进制简介、转换与运算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/17/%E8%BF%9B%E5%88%B6%E7%AE%80%E4%BB%8B%E3%80%81%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%BF%90%E7%AE%97/" class="article-date">
+  <time class="dt-published" datetime="2021-03-17T01:11:14.000Z" itemprop="datePublished">2021-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/03/17/%E8%BF%9B%E5%88%B6%E7%AE%80%E4%BB%8B%E3%80%81%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%BF%90%E7%AE%97/">进制简介、转换与运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>一点进制知识总结</p>
+<h2 id="1-进制简介"><a href="#1-进制简介" class="headerlink" title="1. 进制简介"></a>1. 进制简介</h2><p><strong>进制</strong>：即进位制，是我们规定的一种进位方式，表示某一位置上的数，运算时是逢几进一位。十进制逢十进一，十六进制逢十六进一……</p>
+<h5 id="为什么要学习进制？"><a href="#为什么要学习进制？" class="headerlink" title="为什么要学习进制？"></a>为什么要学习进制？</h5><p>计算机数据在底层运算时候，都以二进制形式运作，也有数据以八进制、十进制、或者十六进制进行存储或运算，了解不同的进制，有助于理解数据的运算过程。</p>
+<h5 id="二进制（0b）（binary）"><a href="#二进制（0b）（binary）" class="headerlink" title="二进制（0b）（binary）"></a>二进制（<code>0b</code>）（binary）</h5><p>只用 0 和 1 两个数码来表示。进位规则：逢二进一，借位规则是 “借一当二”。</p>
+<h5 id="八进制（0）（octal）"><a href="#八进制（0）（octal）" class="headerlink" title="八进制（0）（octal）"></a>八进制（<code>0</code>）（octal）</h5><h5 id="十六进制（0x）（hex）"><a href="#十六进制（0x）（hex）" class="headerlink" title="十六进制（0x）（hex）"></a>十六进制（<code>0x</code>）（hex）</h5><p>用数字 0 到 9 和字母 A 到 F（或 a-f）表示，其中：A — F 表示10 - 15，这称为十六进制。</p>
+<h2 id="2-进制转换"><a href="#2-进制转换" class="headerlink" title="2.进制转换"></a>2.进制转换</h2><h5 id="几进制转十进制"><a href="#几进制转十进制" class="headerlink" title="几进制转十进制"></a>几进制转十进制</h5><p><strong>系数 * 基数的权次幂相加</strong></p>
+<ul>
+<li>系数：每一【位】上的数</li>
+<li>基数：几进制，就是几</li>
+<li>权：从数值的右侧，以 0 开始，逐个 + 1增加。</li>
+</ul>
+<h5 id="十进制到二进制的转换"><a href="#十进制到二进制的转换" class="headerlink" title="十进制到二进制的转换"></a>十进制到二进制的转换</h5><p><strong>除基取余</strong></p>
+<p>使用源数据，不断的除以基数（几进制，基数就是几）得到余数，直到商为零，再将余数倒着拼起来。</p>
+<h5 id="快速进制转换（8421码）："><a href="#快速进制转换（8421码）：" class="headerlink" title="快速进制转换（8421码）："></a>快速进制转换（8421码）：</h5><ul>
+<li><p>8421 码</p>
+<p>8421 码又称为 BCD 码</p>
+<p>BCD：（<code>Binary-Coded Decimal</code>）二进制码十进制数</p>
+<p>在这种编码方式中，每一位二进制值的 1 都是代表一个固定数值，把每一位的 1 代表的十进制数加起来得到的结果就是它所代表的十进制数。</p>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">1</th>
+<th align="center">1</th>
+<th align="center">1</th>
+<th align="center">1</th>
+<th align="center">1</th>
+<th align="center">1</th>
+<th align="center">1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">128</td>
+<td align="center">64</td>
+<td align="center">32</td>
+<td align="center">16</td>
+<td align="center">8</td>
+<td align="center">4</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>0 所对应的值不取， 1 所对应的值取出并相加。</p>
+</li>
+</ul>
+<h5 id="二进制快速转八进制"><a href="#二进制快速转八进制" class="headerlink" title="二进制快速转八进制"></a>二进制快速转八进制</h5><p>八进制：将三个二进制位看为一组，在进行转换</p>
+<h5 id="二进制快速转十六进制"><a href="#二进制快速转十六进制" class="headerlink" title="二进制快速转十六进制"></a>二进制快速转十六进制</h5><p>十六进制：将四个二进制位看为一组，再进行转换</p>
+<h2 id="3-原码、反码和补码"><a href="#3-原码、反码和补码" class="headerlink" title="3.原码、反码和补码"></a>3.原码、反码和补码</h2><p> <strong>原码：</strong> 二进制码，最高位 0 表示正 1 表示负</p>
+<p><strong>反码：</strong> 正数不变，负数符号位不变，其他位取反</p>
+<p><strong>补码：</strong> 正数不变，负数 +1；</p>
+<h2 id="4-位运算符"><a href="#4-位运算符" class="headerlink" title="4.位运算符"></a>4.位运算符</h2><p>** <code>&amp; | ~ ^</code> **</p>
+<ul>
+<li><p><code>&amp; 并且  有false则false， 也就是 0 则 0;</code></p>
+</li>
+<li><p>```java<br>  // 规律： 任何数和0去与  都是0;<br>//0<br>System.out.println(100&amp;0);<br>  System.out.println(13127128&amp;0); </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">- &#96;| 或者 有true则true  也就是有1 则1&#96;</span><br><span class="line">	</span><br><span class="line">	&#96;&#96;&#96;java</span><br><span class="line">	&#x2F;&#x2F; 规律， 任何与 与 这个数所在的数据类型中的最大值 去或  都得到这个最大值;</span><br><span class="line">	System.out.println(5|127); &#x2F;&#x2F;127</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>~  取反</code></p>
+</li>
+<li><p><code>^ 异或  不同为true 1  相同为false 0</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 规律 --- 两个相同的数去异或 得到0</span></span><br><span class="line"><span class="comment">//规律 ---- 任何数 和0 去异或 都得到自身。</span></span><br><span class="line"><span class="comment">// 规律---- 任何数和另一个数 异或两次 得到的还是自身。</span></span><br></pre></td></tr></table></figure></li>
+<li><p>两个数据的交换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">方法一 ：</span><br><span class="line"><span class="keyword">int</span> temp = a;</span><br><span class="line">a = b;</span><br><span class="line">b = temp;</span><br><span class="line">方法二：</span><br><span class="line">a = a^b;</span><br><span class="line">b = a^b;</span><br><span class="line">a = a^b;</span><br><span class="line">方法三：</span><br><span class="line">a = a+b;  </span><br><span class="line">b = a-b; <span class="comment">// a+b-b = a</span></span><br><span class="line">a = a-b; <span class="comment">// a+b-a = b</span></span><br></pre></td></tr></table></figure></li>
+<li><p>位移：<code>&lt;&lt;</code> 左移</p>
+</li>
+<li><p><code>&gt;&gt;</code> 有符号右移</p>
+</li>
+<li><p><code>&gt;&gt;&gt;</code>  无符号右移</p>
+</li>
+<li><p>冒泡排序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* “冒泡”排序 */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="keyword">int</span> intArray[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intArray.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; intArray.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (intArray[j] &gt; intArray[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="comment">/* 交换两个元素的值 */</span></span><br><span class="line">                    intArray[j] = intArray[j] ^ intArray[j + <span class="number">1</span>];</span><br><span class="line">                    intArray[j + <span class="number">1</span>] = intArray[j] ^ intArray[j + <span class="number">1</span>];</span><br><span class="line">                    intArray[j] = intArray[j] ^ intArray[j + <span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>矩阵转置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/* 矩阵转置 */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">transpose</span><span class="params">(<span class="keyword">int</span> matrix[][])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="comment">/* 交换两个元素的值 */</span></span><br><span class="line">                matrix[i][j] = matrix[i][j] ^ matrix[j][i];</span><br><span class="line">                matrix[j][i] = matrix[j][i] ^ matrix[i][j];</span><br><span class="line">                matrix[i][j] = matrix[i][j] ^ matrix[j][i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/17/%E8%BF%9B%E5%88%B6%E7%AE%80%E4%BB%8B%E3%80%81%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%BF%90%E7%AE%97/" data-id="ckmg6r6b50003iwv570iz1ieg" data-title="进制简介、转换与运算" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-修改-Windows-控制台的默认代码页" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/03/09/%E4%BF%AE%E6%94%B9-Windows-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%A0%81%E9%A1%B5/" class="article-date">
@@ -162,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/09/%E4%BF%AE%E6%94%B9-Windows-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%A0%81%E9%A1%B5/" data-id="ckm1y1ckn0002lcv52t1obuyv" data-title="修改 Windows 控制台的默认代码页" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/09/%E4%BF%AE%E6%94%B9-Windows-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%A0%81%E9%A1%B5/" data-id="ckmg6r6av0000iwv593e6ftjt" data-title="修改 Windows 控制台的默认代码页" class="article-share-link">Share</a>
       
       
       
@@ -262,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/09/Windows-10-%E4%B8%8B-Github-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA-Blog/" data-id="ckm1y1ckf0000lcv5hoe78j8v" data-title="Windows 10 下 Github + Hexo 搭建个人 Blog" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/09/Windows-10-%E4%B8%8B-Github-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA-Blog/" data-id="ckmg6r6b10001iwv51msn198h" data-title="Windows 10 下 Github + Hexo 搭建个人 Blog" class="article-share-link">Share</a>
       
       
       
@@ -313,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/09/hello-world/" data-id="ckm1y1ckk0001lcv52nwx8hic" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/09/hello-world/" data-id="ckmg6r6b30002iwv5a0qucv1e" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -354,6 +467,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/17/%E8%BF%9B%E5%88%B6%E7%AE%80%E4%BB%8B%E3%80%81%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%BF%90%E7%AE%97/">进制简介、转换与运算</a>
+          </li>
         
           <li>
             <a href="/2021/03/09/%E4%BF%AE%E6%94%B9-Windows-%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E4%BB%A3%E7%A0%81%E9%A1%B5/">修改 Windows 控制台的默认代码页</a>
